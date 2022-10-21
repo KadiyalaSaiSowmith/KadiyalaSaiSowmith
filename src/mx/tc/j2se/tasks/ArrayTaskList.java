@@ -22,6 +22,7 @@ public class ArrayTaskList {
     public Task get(int index) {
         // if index is negative or greater than size of size, we throw
         // Exception.
+
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("Index: " + index + ", Size "
                     + index);

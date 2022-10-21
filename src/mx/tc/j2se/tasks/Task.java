@@ -1,21 +1,62 @@
 package mx.tc.j2se.tasks;
 
-public class Task {
+public class Task extends Exception {
     public  Task(){}
     String title;
-    int time,start,end,interval;
+    int time;
+    int start;
+    int end;
+    int interval;
     boolean check,active=false;
 
+    public int getStart() {
+        return start;
+    }
 
+    public void setStart(int start) {
+        this.start = start;
+    }
+
+    public int getEnd() {
+        return end;
+    }
+
+    public void setEnd(int end) {
+        this.end = end;
+    }
+
+    public int getInterval() {
+        return interval;
+    }
+
+    public void setInterval(int interval) {
+        this.interval = interval;
+    }
+
+    public boolean isCheck() {
+        return check;
+    }
+
+    public void setCheck(boolean check) {
+        this.check = check;
+    }
 
     public Task(String title, int time)
     {   check = false;
        this.title = title;
        this.time = time;
-       System.out.println("hi");
+
+       if(time<0)
+       {
+          throw new IllegalArgumentException("Time is in Negative values");
+       }
     }
     Task (String title, int start, int end, int interval)
     {
+        if(start<0 || end <0 || interval<=0)
+        {
+            throw new IllegalArgumentException("Time is in Negative values or Check or keep the Interval >0");
+        }
          this.title = title;
          this.start = start;
          this.end = end;
