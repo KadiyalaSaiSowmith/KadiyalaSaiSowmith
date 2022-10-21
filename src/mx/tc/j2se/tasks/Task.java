@@ -4,7 +4,7 @@ public class Task {
     public  Task(){}
     String title;
     int time,start,end,interval;
-    boolean check,active=false ;
+    boolean check,active=false;
 
 
 
@@ -12,6 +12,7 @@ public class Task {
     {   check = false;
        this.title = title;
        this.time = time;
+       System.out.println("hi");
     }
     Task (String title, int start, int end, int interval)
     {
