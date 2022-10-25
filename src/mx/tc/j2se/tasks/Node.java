@@ -1,26 +1,10 @@
 package mx.tc.j2se.tasks;
 public class Node {
+    Task data; //Data in the current node
+    Node next; //Reference for the next node
 
-    private Task data;
-    private Node nextNode;
-
-    public Node(Task data){
+    //Constructor which takes an int value which is stored as the data in this Node object.
+    Node(Task data) {
         this.data = data;
-    }
-
-    public Task getData() {
-        return data;
-    }
-
-    public void setData(Task data) {
-        this.data = data;
-    }
-
-    public Node getNextNode() {
-        return nextNode;
-    }
-
-    public void setNextNode(Node nextNode) {
-        this.nextNode = nextNode;
     }
 }

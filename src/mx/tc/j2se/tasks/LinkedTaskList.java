@@ -1,59 +1,90 @@
 package mx.tc.j2se.tasks;
 
 
-public class LinkedTaskList
+public class LinkedTaskList extends AbstractTaskList
 {
-    private Node head;
-    public LinkedTaskList() {
-    }
-        public void insert(Task data){
-        Node newNode = new Node(data);
-        if(this.head == null){
+    Node head;
+
+        //function to add an element to the list at the end if there are element already and at the start if no elements are there
+        public void add(Task data) {
+            Node newNode = new Node(data);
+            if(head == null) {
+                head = newNode;
+            }else {
+                Node n = head;
+                while(n.next != null) {
+                    n = n.next;
+                }
+                n.next = newNode;
+            }
+        }
+
+        /*//function to add an element at the start of the list
+        public void insertAtStart(int data) {
+            Node newNode = new Node(data);
+
+            newNode.next = head;
             head = newNode;
-        }else {
-            Node currentNode = head;
-            while(currentNode.getNextNode() != null){
-                currentNode = currentNode.getNextNode();
+        }*/
+
+        //function to add an element at a given index
+        /*public void insertAt(int index, int data) {
+            if(index == 0){
+                insertAtStart(data); //We already have a function to do this.
+            }else{
+                Node newNode = new Node(data);
+
+                Node currentNode = head;
+                for(int i = 0; i < index - 1; i++) {
+                    currentNode = currentNode.next;
+                }
+                newNode.next = currentNode.next;
+                currentNode.next = newNode;
             }
-            currentNode.setNextNode(newNode);
         }
-    }
-
-    public void insertHead(Task data){
-        Node newNode = new Node(data);
-        newNode.setNextNode(head);
-        head = newNode;
-    }
-
-    public void insertAt(int index, Task data){
-        Node nodeToBeInserted = new Node(data);
-        Node node = head;
-        for(int i = 0; i< index -1; i++){
-            node = node.getNextNode();
-        }
-        nodeToBeInserted.setNextNode(node.getNextNode());
-        node.setNextNode(nodeToBeInserted);
-    }
-
-    public void deleteNodeAt(int index){
-        Node node = head;
-        for(int i = 0; i< index -1; i++){
-            node = node.getNextNode();
-        }
-        node.setNextNode(node.getNextNode().getNextNode());
-    }
-
-    public void display(){
-        if(head != null){
-            Node currentNode = head;
-            while(currentNode.getNextNode() != null){
-                System.out.println(currentNode.getData());
-                currentNode = currentNode.getNextNode();
+*/
+        //function to delete an element at the given index
+        public boolean remove(int index) {
+            if(index == 0) {
+                head = head.next;
+               // return head;
+                return true;
+            }else{
+                Node currentNode = head;
+                for(int i = 0; i < index - 1; i++) {
+                    currentNode = currentNode.next;
+                }
+                currentNode.next = currentNode.next.next;
+                return true;
             }
-            System.out.println(currentNode.getData());
+
         }
-    }
 
-    }
+        // get method
+        public Task get(int index) {
+            int i = 0;
+            Node current = head;
+            while (current != null) {
+                if (i == index) {
+                    break;
+                }
+                current = current.next;
+                i++;
+            }
+            return current.data;
+        }
 
 
+            //function to show the list
+            public void display () {
+                Node currentNode = head;
+                if (currentNode == null) {
+                    System.out.println("Linked list is empty");
+                } else {
+                    while (currentNode != null) {
+                        System.out.print(currentNode.data + " ");
+                        currentNode = currentNode.next;
+                    }
+                }
+            }
+        }
