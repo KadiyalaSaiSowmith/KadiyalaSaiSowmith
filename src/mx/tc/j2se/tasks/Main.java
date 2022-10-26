@@ -1,4 +1,5 @@
 package mx.tc.j2se.tasks;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Main {
@@ -46,6 +47,21 @@ public class Main {
         xyz.add(obj10);
         xyz.display();
         abc.ArrayTaskListincoming(from,to);
+    // AbstactTaskList www = new AbstarctTaskList();
+       TaskListFactory TLF1 = new TaskListFactory();
+
+        AbstractTaskList ATL1= TLF1.createTaskList(ListTypes.types.ARRAY);
+        ATL1.add(obj2);
+        Iterator<Task> aa = ATL1.iterator();
+       while(aa.hasNext())
+       {
+           System.out.println(aa.next().toString()+"Hello World");
+       }
+        AbstractTaskList ATL2= TLF1.createTaskList(ListTypes.types.LINKED);
+       // must add some objects to linked list by eod
+        /*Task obj12 = new Task("Raghu",13,20,2);
+        Task obj13 = new Task("Sowmith",2,20,1);*/
+
 
 
 

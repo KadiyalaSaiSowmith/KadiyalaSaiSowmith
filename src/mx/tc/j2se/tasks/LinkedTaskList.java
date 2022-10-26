@@ -4,18 +4,21 @@ package mx.tc.j2se.tasks;
 public class LinkedTaskList extends AbstractTaskList
 {
     Node head;
+    int size = 0;
 
         //function to add an element to the list at the end if there are element already and at the start if no elements are there
         public void add(Task data) {
             Node newNode = new Node(data);
             if(head == null) {
                 head = newNode;
+                size++;
             }else {
                 Node n = head;
                 while(n.next != null) {
                     n = n.next;
                 }
                 n.next = newNode;
+               size++;
             }
         }
 
@@ -73,7 +76,17 @@ public class LinkedTaskList extends AbstractTaskList
             }
             return current.data;
         }
+        public int size()
+        {
+            Node current = head;
+            while(current!=null)
+            {
+                current =  current.next;
+                size++;
 
+            }
+            return size;
+        }
 
             //function to show the list
             public void display () {

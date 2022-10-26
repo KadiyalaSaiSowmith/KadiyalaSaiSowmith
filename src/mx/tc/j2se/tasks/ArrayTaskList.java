@@ -63,6 +63,11 @@ public class ArrayTaskList extends AbstractTaskList {
         elementData = Arrays.copyOf(elementData, newIncreasedCapacity);
     }
 
+    public int size()
+    {
+        return size;
+    }
+
     /**
      * Display custom/your own ArrayList.
      *
