@@ -1,10 +1,23 @@
 package mx.tc.j2se.tasks;
+
+
+import java.time.LocalTime;
 import java.util.Iterator;
+
+import java.time.LocalDateTime;
+//import java.time.format.DateTimeFormatter;
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args)
     {
+        LocalDateTime from;
+        LocalDateTime to;
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println(now);
+       /* To know the documentation ArrayList<Integer> arr = new ArrayList<Integer>();
+        arr.stream().iterator(); import java.util.ArrayList;*//*
         int from = 10;
         int to = 20;
         Task obj = new Task(); // setting values using getter and setter methods
@@ -48,7 +61,7 @@ public class Main {
         xyz.display();
         abc.ArrayTaskListincoming(from,to);
     // AbstactTaskList www = new AbstarctTaskList();
-       TaskListFactory TLF1 = new TaskListFactory();
+       *//*TaskListFactory TLF1 = new TaskListFactory();
 
         AbstractTaskList ATL1= TLF1.createTaskList(ListTypes.types.ARRAY);
         ATL1.add(obj2);
@@ -57,10 +70,98 @@ public class Main {
        {
            System.out.println(aa.next().toString()+"Hello World");
        }
-        AbstractTaskList ATL2= TLF1.createTaskList(ListTypes.types.LINKED);
+        AbstractTaskList ATL2= TLF1.createTaskList(ListTypes.types.LINKED);*//*
        // must add some objects to linked list by eod
-        /*Task obj12 = new Task("Raghu",13,20,2);
-        Task obj13 = new Task("Sowmith",2,20,1);*/
+        *//*Task obj12 = new Task("Raghu",13,20,2);
+        Task obj13 = new Task("Sowmith",2,20,1);*//*
+
+*/
+        Task t1=new Task("Lunch with Beautiful girl", LocalDateTime.of(2022, 8,24,8,15));
+        Task obj2 = new Task("Go to Home",LocalDateTime.of(2022, 10,27,18,00));
+        Task obj3 = new Task("Come back to Office",LocalDateTime.of(2022, 10,28,9,30));
+        Task t2=new Task("Morning run",LocalDateTime.of(2022, 3,1,8,15),LocalDateTime.of(2022, 9,1,8,15), LocalTime.of(10,0,0));
+      //  System.out.println(t1.nextTimeAfter(LocalDateTime.of(2022, Month.valueOf("AUGUST"),24,8,15)));
+        // //AbstractTaskList abobject=new ArrayTaskList(); // t
+        // creating ArrayTaskList class object using TaskListFactory
+        TaskListFactory tf =new TaskListFactory();
+     AbstractTaskList abobject = tf.createTaskList(ListTypes.types.ARRAY);
+     //System.out.
+      //  abobject.add(obj);
+        abobject.add(obj2);
+        abobject.add(obj3);
+        System.out.println("Displaying ArrayTaskList using TaskListFactory"+'\n');
+        abobject.display();
+
+       // abobject.add(obj10);
+
+        // creating Linked Task list class object using TaskListFactory
+        TaskListFactory tf2 =new TaskListFactory();
+        AbstractTaskList abobject3 = tf.createTaskList(ListTypes.types.LINKED);
+        abobject3.add(obj2);
+        abobject3.add(obj3);
+        System.out.println("Displaying LinkedTaskList using TaskListFactory "+'\n');
+        abobject3.display();
+
+        Iterator<Task> itr = abobject.iterator();
+        // Checking the next element  where
+        // condition holds true till there is single element
+        // in the List using hasnext() method
+        System.out.print("\nUSING ITERATORS TO DISPLAY THE ARRAYLIST ELEMENTS ");
+        while (itr.hasNext()) {
+            //  Moving cursor to next element
+            Task i = itr.next();
+//            System.out.println("in list");
+            // Getting elements one by one
+            System.out.print(i + " ");
+            // Removing odd elements
+        }
+        System.out.print("\nDISPLAY THE ARRAYLIST ELEMENTS ");
+        abobject.display();
+
+
+
+       AbstractTaskList abobject2=new LinkedTaskList(); // t
+      //  abobject2.add(obj);
+        abobject2.add(obj2);
+        abobject2.add(obj3);
+       // abobject2.add(obj10);
+
+        Iterator<Task> itr2 = abobject2.iterator();
+        // Checking the next element  where
+        // condition holds true till there is single element
+        // in the List using hasnext() method
+        System.out.print("\nUSING ITERATORS TO DISPLAY THE LINKEDLIST ELEMENTS ");
+        while (itr2.hasNext()) {
+            //  Moving cursor to next element
+            Task m = itr2.next();
+//            System.out.println("in list");
+            // Getting elements one by one
+            System.out.println(m + " "+"LINKED ");
+            // Removing odd elements
+        }
+        System.out.print("\nDISPLAY THE LINKEDLIST ELEMENTS ");
+        abobject2.display();
+
+        ArrayTaskList o1 = new ArrayTaskList();
+        o1.add(obj2);
+        o1.add(obj3);
+        ArrayTaskList o2 = new ArrayTaskList();
+        o2.add(obj2);
+        o2.add(obj3);
+
+//System.out.println(o1.get(0)+"hello");
+   //   ArrayTaskList obb = new ArrayTaskList();
+        System.out.println(AbstractTaskList.Hashcode(o1,o2)+" hi");
+
+
+
+
+
+
+
+
+
+
 
 
 

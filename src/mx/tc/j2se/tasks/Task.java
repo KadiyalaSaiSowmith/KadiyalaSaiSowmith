@@ -1,35 +1,37 @@
 package mx.tc.j2se.tasks;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 public class Task extends Exception {
     public  Task(){}
     String title;
-    int time;
-    int start;
-    int end;
-    int interval;
+    LocalDateTime time;
+    LocalDateTime start;
+    LocalDateTime end;
+    LocalTime interval;
     boolean check,active=false;
 
-    public int getStart() {
+    public LocalDateTime getStart() {
         return start;
     }
 
-    public void setStart(int start) {
+    public void setStart(LocalDateTime start) {
         this.start = start;
     }
 
-    public int getEnd() {
+    public LocalDateTime getEnd() {
         return end;
     }
 
-    public void setEnd(int end) {
+    public void setEnd(LocalDateTime end) {
         this.end = end;
     }
 
-    public int getInterval() {
+    public LocalTime getInterval() {
         return interval;
     }
 
-    public void setInterval(int interval) {
+    public void setInterval(LocalTime interval) {
         this.interval = interval;
     }
 
@@ -41,22 +43,22 @@ public class Task extends Exception {
         this.check = check;
     }
 
-    public Task(String title, int time)
+    public Task(String title, LocalDateTime time)
     {   check = false;
        this.title = title;
        this.time = time;
 
-       if(time<0)
+      /* if(time<0)
        {
           throw new IllegalArgumentException("Time is in Negative values");
-       }
+       }*/
     }
-    Task (String title, int start, int end, int interval)
+    Task (String title, LocalDateTime start, LocalDateTime end, LocalTime interval)
     {
-        if(start<0 || end <0 || interval<=0)
+        /*if(start<0 || end <0 || interval<=0)
         {
             throw new IllegalArgumentException("Time is in Negative values or Check or keep the Interval >0");
-        }
+        }*/
          this.title = title;
          this.start = start;
          this.end = end;
@@ -85,7 +87,7 @@ public class Task extends Exception {
          this.active = active;
     }
 
-    public int getTime()
+    public LocalDateTime getTime()
     {
         if(check) {
             return this.start;
@@ -94,7 +96,7 @@ public class Task extends Exception {
             return this.time;
         }
     }
-    public void setTime(int time)
+    public void setTime(LocalDateTime time)
     {
         if(check)
         {
@@ -105,38 +107,40 @@ public class Task extends Exception {
     }
        this.time = time;
     }
-    public int getStartTime()
+    public LocalDateTime getStartTime()
     {
+        LocalDateTime now = LocalDateTime.now();
         if(!check)
         {
             return this.time;
         }
         else
-            return 0;
+            return now;
 
     }
-    public int getEndTime()
-    {
+    public LocalDateTime getEndTime()
+    {   LocalDateTime now = LocalDateTime.now();
         if(!check)
         {
             return time;
         }
         else
-            return 0;
+            return now;
 
     }
-    public int getRepeatInterval()
+    public LocalDateTime getRepeatInterval()
     {
+        LocalDateTime now = LocalDateTime.now();
         if(!check)
         {
-            return 0;
+            return now;
         }
         else
         {
-            return 1;
+            return now;
         }
     }
-    public void setTime(int start, int end, int interval)
+    public void setTime(LocalDateTime start, LocalDateTime end, LocalDateTime interval)
     {
         if(!check)
         {

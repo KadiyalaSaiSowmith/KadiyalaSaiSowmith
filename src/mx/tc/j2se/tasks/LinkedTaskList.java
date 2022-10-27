@@ -77,15 +77,15 @@ public class LinkedTaskList extends AbstractTaskList
             return current.data;
         }
         public int size()
-        {
+        { int i=0;
             Node current = head;
             while(current!=null)
             {
                 current =  current.next;
-                size++;
+                i++;
 
             }
-            return size;
+            return i;
         }
 
             //function to show the list
@@ -100,4 +100,7 @@ public class LinkedTaskList extends AbstractTaskList
                     }
                 }
             }
+
+            // implementing hashcode methods
+
         }
