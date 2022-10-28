@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a63d9ca9-1274-4438-972b-b56166d0d606" name="Changes" comment="training 26th October, 2022">
+    <list default="true" id="a63d9ca9-1274-4438-972b-b56166d0d606" name="Changes" comment="training 27th October, 2022">
+      <change afterPath="$PROJECT_DIR$/src/mx/tc/j2se/tasks/Tasks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mx/tc/j2se/tasks/AbstractTaskList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mx/tc/j2se/tasks/AbstractTaskList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mx/tc/j2se/tasks/ArrayTaskList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mx/tc/j2se/tasks/ArrayTaskList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mx/tc/j2se/tasks/LinkedTaskList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mx/tc/j2se/tasks/LinkedTaskList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mx/tc/j2se/tasks/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mx/tc/j2se/tasks/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mx/tc/j2se/tasks/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mx/tc/j2se/tasks/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mx/tc/j2se/tasks/TaskListFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mx/tc/j2se/tasks/TaskListFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666787752772</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="training 27th October, 2022">
+      <created>1666873989839</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1666873989839</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -213,6 +218,7 @@
     <MESSAGE value="training 21th October, 2022" />
     <MESSAGE value="training 25th October, 2022" />
     <MESSAGE value="training 26th October, 2022" />
-    <option name="LAST_COMMIT_MESSAGE" value="training 26th October, 2022" />
+    <MESSAGE value="training 27th October, 2022" />
+    <option name="LAST_COMMIT_MESSAGE" value="training 27th October, 2022" />
   </component>
 </project>

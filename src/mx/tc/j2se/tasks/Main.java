@@ -1,21 +1,21 @@
 package mx.tc.j2se.tasks;
-
-
 import java.time.LocalTime;
 import java.util.Iterator;
-
 import java.time.LocalDateTime;
+//import java.time.LocalDate;
 //import java.time.format.DateTimeFormatter;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args)
-    {
-        LocalDateTime from;
-        LocalDateTime to;
+    { //LocalDate dateOfBirth = LocalDate.of(2010, 01, 14);
+        // change the values to a aprticular values
+        LocalDateTime from = LocalDateTime.of(2020, 1, 14,9,00,00);
+        LocalDateTime to=LocalDateTime.of(2023, 11, 14,10,00,00);;
+      /*  just for the experiment purpose
         LocalDateTime now = LocalDateTime.now();
-        System.out.println(now);
+        System.out.println(now);*/
        /* To know the documentation ArrayList<Integer> arr = new ArrayList<Integer>();
         arr.stream().iterator(); import java.util.ArrayList;*//*
         int from = 10;
@@ -89,6 +89,8 @@ public class Main {
       //  abobject.add(obj);
         abobject.add(obj2);
         abobject.add(obj3);
+        abobject.add(t2);
+
         System.out.println("Displaying ArrayTaskList using TaskListFactory"+'\n');
         abobject.display();
 
@@ -100,7 +102,7 @@ public class Main {
         abobject3.add(obj2);
         abobject3.add(obj3);
         System.out.println("Displaying LinkedTaskList using TaskListFactory "+'\n');
-        abobject3.display();
+        //abobject3.display();
 
         Iterator<Task> itr = abobject.iterator();
         // Checking the next element  where
@@ -141,7 +143,7 @@ public class Main {
         }
         System.out.print("\nDISPLAY THE LINKEDLIST ELEMENTS ");
         abobject2.display();
-
+       // to do create using AbstractTaskfactory
         ArrayTaskList o1 = new ArrayTaskList();
         o1.add(obj2);
         o1.add(obj3);
@@ -151,20 +153,32 @@ public class Main {
 
 //System.out.println(o1.get(0)+"hello");
    //   ArrayTaskList obb = new ArrayTaskList();
-        System.out.println(AbstractTaskList.Hashcode(o1,o2)+" hi");
+        System.out.println(AbstractTaskList.Hashcode(o1,o2));
 
+        // calling incoming method
 
+        System.out.println('\n');
+        System.out.println('\n');
+        System.out.println('\n');
+//        ListInComingMethod.add(t1);
+//        ListInComingMethod.add(obj2);
+//        ListInComingMethod.add(obj3);
 
+        System.out.println("Checking Incoming method");
+        TaskListFactory TLF99 =new TaskListFactory();
+        AbstractTaskList Array99 = tf.createTaskList(ListTypes.types.ARRAY);
+        Array99.add(t2);
+        Iterator<Task> Iter99 = Array99.iterator();
+        Iterator<Task> ans = Tasks.incoming(Iter99,from, to);
 
-
-
-
-
-
-
-
-
-
+        while (ans.hasNext()) {
+            //  Moving cursor to next element
+            Task i = ans.next();
+//            System.out.println("in list");
+            // Getting elements one by one
+            System.out.print(i);
+            // Removing odd elements
+        }
 
     }
 }

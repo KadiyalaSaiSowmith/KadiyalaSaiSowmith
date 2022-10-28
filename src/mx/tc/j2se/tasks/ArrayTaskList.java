@@ -1,4 +1,5 @@
 package mx.tc.j2se.tasks;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.*;
 public class ArrayTaskList extends AbstractTaskList {
@@ -6,20 +7,6 @@ public class ArrayTaskList extends AbstractTaskList {
     private static final int INITIAL_CAPACITY = 10;
     private int size = 0;
     private Task elementData[] = {};
-
-
-//   public void ArrayTaskListincoming(LocalDateTime from, LocalDateTime to) {
-//
-//       for (int i = 0; i < size; i++)
-//       {
-//           if (from < elementData[i].getStart()  & elementData[i].getStart()< to)
-//           {
-//               System.out.println('\n');
-//               System.out.println(elementData[i]);
-//               //System.out.println("hi");
-//           }
-//       }
-//   }
 
     public ArrayTaskList() {
         elementData = new Task[INITIAL_CAPACITY];
