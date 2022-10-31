@@ -7,6 +7,8 @@ public abstract class AbstractTaskList implements Iterable<Task> {
     {
 
     }*/
+    /*public abstract Stream<Task> getStream();*/
+
     public abstract void add(Task task);
 
     //public abstract void insertHead(Task data);
@@ -17,7 +19,7 @@ public abstract class AbstractTaskList implements Iterable<Task> {
     public abstract void display();
 
     public abstract int size();
- // to do create child classes   public abstract Stream<Task> getStream();
+
 
 
 //    public abstract void insert(Task data);
@@ -27,8 +29,6 @@ public abstract class AbstractTaskList implements Iterable<Task> {
     //  private Task[] arrayList;
     // private int Size;
 
-    // @Override
-    //@Override
     public static Boolean Hashcode(ArrayTaskList t1,ArrayTaskList t2)
     {
 
@@ -47,9 +47,6 @@ public abstract class AbstractTaskList implements Iterable<Task> {
                 return false;
             }
             return true;
-
-
-
 
         }
     }

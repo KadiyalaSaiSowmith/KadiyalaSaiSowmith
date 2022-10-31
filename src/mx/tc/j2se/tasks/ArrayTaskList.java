@@ -2,6 +2,8 @@ package mx.tc.j2se.tasks;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.stream.Stream;
+
 public class ArrayTaskList extends AbstractTaskList {
 
     private static final int INITIAL_CAPACITY = 10;
@@ -10,6 +12,11 @@ public class ArrayTaskList extends AbstractTaskList {
 
     public ArrayTaskList() {
         elementData = new Task[INITIAL_CAPACITY];
+
+    }
+    public Stream<Task> getStream()
+    {
+        return Stream.of(this.elementData);
 
     }
 

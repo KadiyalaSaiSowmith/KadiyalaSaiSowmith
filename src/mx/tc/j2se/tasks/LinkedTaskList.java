@@ -1,11 +1,17 @@
 package mx.tc.j2se.tasks;
 
 
+import java.util.stream.Stream;
+
 public class LinkedTaskList extends AbstractTaskList
 {
     Node head;
     int size = 0;
-
+ // remove line 11
+   /* public Stream<Task> getStream()
+    {
+        return Stream.of(this.elementData);
+    }*/
         //function to add an element to the list at the end if there are element already and at the start if no elements are there
         public void add(Task data) {
             Node newNode = new Node(data);

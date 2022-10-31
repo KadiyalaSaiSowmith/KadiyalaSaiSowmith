@@ -2,6 +2,8 @@ package mx.tc.j2se.tasks;
 import java.time.LocalTime;
 import java.util.Iterator;
 import java.time.LocalDateTime;
+import java.util.Scanner;
+// below imports are used for extra detailing
 //import java.time.LocalDate;
 //import java.time.format.DateTimeFormatter;
 
@@ -9,15 +11,22 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args)
-    { //LocalDate dateOfBirth = LocalDate.of(2010, 01, 14);
-        // change the values to a aprticular values
+    {
+        // (way to initialize date objects) LocalDate dateOfBirth = LocalDate.of(2010, 01, 14);
+
+        // declaring from and to values
         LocalDateTime from = LocalDateTime.of(2020, 1, 14,9,00,00);
         LocalDateTime to=LocalDateTime.of(2023, 11, 14,10,00,00);;
-      /*  just for the experiment purpose
+
+        /*  just for the experiment purpose
         LocalDateTime now = LocalDateTime.now();
         System.out.println(now);*/
+
        /* To know the documentation ArrayList<Integer> arr = new ArrayList<Integer>();
         arr.stream().iterator(); import java.util.ArrayList;*//*
+
+
+        // Task1 (assigning the values through getter, setter and constructor)
         int from = 10;
         int to = 20;
         Task obj = new Task(); // setting values using getter and setter methods
@@ -27,6 +36,7 @@ public class Main {
         obj.setActive(true);
        // obj.set
         obj.setTime(-1);
+
         ArrayTaskList abc = new ArrayTaskList();
         //Add elements in custom ArrayList
         abc.add(obj);
@@ -168,6 +178,7 @@ public class Main {
         TaskListFactory TLF99 =new TaskListFactory();
         AbstractTaskList Array99 = tf.createTaskList(ListTypes.types.ARRAY);
         Array99.add(t2);
+        System.out.println(Array99.getStream()+"Hi");
         Iterator<Task> Iter99 = Array99.iterator();
         Iterator<Task> ans = Tasks.incoming(Iter99,from, to);
 
@@ -180,5 +191,7 @@ public class Main {
             // Removing odd elements
         }
 
+
     }
+
 }
