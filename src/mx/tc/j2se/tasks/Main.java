@@ -178,7 +178,7 @@ public class Main {
         TaskListFactory TLF99 =new TaskListFactory();
         AbstractTaskList Array99 = tf.createTaskList(ListTypes.types.ARRAY);
         Array99.add(t2);
-        System.out.println(Array99.getStream()+"Hi");
+        //System.out.println(Array99.getStream()+"Hi");
         Iterator<Task> Iter99 = Array99.iterator();
         Iterator<Task> ans = Tasks.incoming(Iter99,from, to);
 
